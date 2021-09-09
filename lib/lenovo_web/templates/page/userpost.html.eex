@@ -1,0 +1,11 @@
+
+<p>  Header:<%= @post.header%></p>
+
+<p> Body:<%= @post.body%></p>
+
+
+<%= link "Add New Post", to: Routes.page_path(@conn, :adduserpost) %>
+
+<br>
+<br>
+<%= link "See all Posts", to: Routes.page_path(@conn, :userallposts) %>

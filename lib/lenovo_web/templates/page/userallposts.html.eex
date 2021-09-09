@@ -1,0 +1,14 @@
+<p>You're logged in as <%= @user.name %></p>
+
+<%= for post <- @posts do %>
+
+
+<p>  Header: <%= post.header%></p>
+
+<p> Body: <%= post.body%></p>
+
+<%= button("Show", to: "/userpost/#{post.id}", method: :get, class: "btn")%>
+     <%= button("Edit", to: "/edituserpost/#{post.id}/edit", method: :get, class: "btn")%>
+     <%= button("Delete", to: "/deleteuserpost/#{post.id}", method: :delete, class: "btn")%>
+
+<% end %>

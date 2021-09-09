@@ -1,0 +1,23 @@
+<%= form_for @changeset, Routes.page_path(@conn, :updateuserpost, @post), [method: :put], fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Header</label>
+    <%= text_input f, :header, class: "form-control" %>
+    <%= error_tag f, :header %>
+  </div>
+
+  <div class="form-group">
+    <label>Body</label>
+    <%= text_input f, :body, class: "form-control" %>
+    <%= error_tag f, :body %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "update", class: "btn btn-primary" %>
+  </div>
+<% end %>

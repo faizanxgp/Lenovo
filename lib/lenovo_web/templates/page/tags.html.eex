@@ -1,0 +1,23 @@
+<p>You're logged in as <%= @current_user.name %></p>
+
+<%= form_for @conn, Routes.page_path(@conn, :posttags), fn f -> %>
+
+     <div class="form-group">
+    <%= label f, :post_id, class: "control-label" %>
+    <%= text_input f, :post_id, class: "form-control" %>
+
+  </div>
+
+
+  <div class="form-group">
+    <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+
+  </div>
+
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+
+  <%end%>

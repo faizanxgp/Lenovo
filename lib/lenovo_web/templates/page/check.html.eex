@@ -1,0 +1,2 @@
+<h1> authenticaetd user </h2>
+<p>You're logged in as <%= @current_user.name %></p>

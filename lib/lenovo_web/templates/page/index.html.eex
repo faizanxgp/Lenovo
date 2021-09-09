@@ -1,0 +1,6 @@
+<section class="phx-hero">
+   <h1>Welcome to Lenovo</h1>
+</section>
+ <%= button("signin", to: "/signin", method: :get, class: "btn")%>
+  <h2>If don't have an account then Register Now.!</h2>
+  <%= button("Create Account Now", to: "/signup", method: :get, class: "btn")%>

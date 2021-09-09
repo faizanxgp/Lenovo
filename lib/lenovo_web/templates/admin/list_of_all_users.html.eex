@@ -1,0 +1,48 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: -20%
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+.btn{
+  margin-left: 5%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+
+<div>
+<%= button("New User", to: "/signup", method: :get, class: "btn") %>
+</div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>password</th>
+    <th>Action</th>
+  </tr>
+  <%= for user <- @list_of_all_users do %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email%></td>
+    <td><%=user.password%></td>
+     <td><%= button("Show", to: "/admin/#{user.id}", method: :get, class: "btn") %>
+     <%= button("Edit", to: "/admin/#{user.id}/edit", method: :get, class: "btn") %>
+     <%= button("Delete", to: "/admin/#{user.id}", method: :delete, class: "btn") %>
+     </td>
+  </tr>
+
+  <% end %>
+
+
+</table>

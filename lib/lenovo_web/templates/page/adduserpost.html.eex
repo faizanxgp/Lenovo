@@ -1,0 +1,18 @@
+<%= form_for @conn, Routes.page_path(@conn, :createuserpost), fn f -> %>
+ <div class="form-group">
+    <%= label f, :header, class: "control-label" %>
+    <%= text_input f, :header, class: "form-control" %>
+
+  </div>
+
+  <div class="form-group">
+    <%= label f, :body, class: "control-label" %>
+    <%= text_input f, :body, class: "form-control" %>
+
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<%= link "See all Previous Posts", to: Routes.page_path(@conn, :userallposts) %>
